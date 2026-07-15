@@ -85,12 +85,14 @@ export async function BuyCourse(
         email: user_details.email,
       },
       handler: function (response) {
+        console.log("Payment Success", response)
         sendPaymentSuccessEmail(response, orderResponse.data.data.amount, token)
         verifyPayment({ ...response, courses }, token, navigate, dispatch)
       },
     }
     const paymentObject = new window.Razorpay(options)
 
+    console.log("Opening Checkout")
     paymentObject.open()
     paymentObject.on("payment.failed", function (response) {
       toast.error("Oops! Payment Failed.")

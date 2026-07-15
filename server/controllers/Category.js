@@ -98,24 +98,30 @@ exports.categoryPageDetails = async (req, res) => {
     const categoriesExceptSelected = await Category.find({
       _id: { $ne: categoryId },
     }).lean()
-
     let differentCategory = null
     if (categoriesExceptSelected.length > 0) {
-      const randomCategory = categoriesExceptSelected[getRandomInt(categoriesExceptSelected.length)]
+      const randomCategory =
+        categoriesExceptSelected[
+          getRandomInt(categoriesExceptSelected.length)
+        ]
       differentCategory = await Category.findById(randomCategory._id)
         .populate({
           path: "courses",
           match: { status: "Published" },
+          populate: "ratingAndReviews",
         })
         .lean()
         .exec()
     }
 
-    const allCategories = await Category.find().populate({
-      path: "courses",
-      match: { status: "Published" },
-    }).lean().exec()
-
+    const allCategories = await Category.find()
+      .populate({
+        path: "courses",
+        match: { status: "Published" },
+        populate: "ratingAndReviews",
+      })
+      .lean()
+      .exec()
     const allCourses = allCategories.flatMap((category) => category.courses || [])
     const mostSellingCourses = allCourses
       .slice()

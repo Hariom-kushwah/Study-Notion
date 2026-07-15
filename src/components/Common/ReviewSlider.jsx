@@ -10,7 +10,7 @@ import "swiper/css/pagination"
 import "../../App.css"
 // Icons
 import { FaStar } from "react-icons/fa"
-// Import required modules
+// eslint-disable-next-line
 import { Autoplay, FreeMode, Pagination } from "swiper"
 
 // Get apiFunction and the endpoint

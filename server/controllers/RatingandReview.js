@@ -49,7 +49,6 @@ exports.createRating = async (req, res) => {
         ratingAndReviews: ratingReview,
       },
     })
-    await courseDetails.save()
 
     return res.status(201).json({
       success: true,
