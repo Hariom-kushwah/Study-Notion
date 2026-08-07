@@ -57,9 +57,9 @@ export default function Instructor() {
               <InstructorChart courses={instructorData} />
             ) : (
               <div className="flex-1 rounded-md bg-richblack-800 p-6">
-                <p className="text-lg font-bold text-richblack-5">Visualize</p>
-                <p className="mt-4 text-xl font-medium text-richblack-50">
-                  Not Enough Data To Visualize
+                <p className="text-lg font-bold text-richblack-5"> Visualize </p>  
+                <p className="mt-4 text-xl font-medium text-richblack-50"> 
+                  Not Enough Data To Visualize  
                 </p>
               </div>
             )}
@@ -68,7 +68,7 @@ export default function Instructor() {
               <p className="text-lg font-bold text-richblack-5">Statistics</p>
               <div className="mt-4 space-y-4">
                 <div>
-                  <p className="text-lg text-richblack-200">Total Courses</p>
+                  <p className="text-lg text-richblack-200">Total Courses</p> 
                   <p className="text-3xl font-semibold text-richblack-50">
                     {courses.length}
                   </p>
