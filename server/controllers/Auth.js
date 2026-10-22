@@ -220,10 +220,13 @@ exports.sendotp = async (req, res) => {
       await mailSender(email, "Email Verification OTP", otpTemplate(otp))
     } catch (mailError) {
       console.log("OTP email sending failed:", mailError.message)
+<<<<<<< HEAD
       return res.status(500).json({
         success: false,
         message: `Failed to send OTP email: ${mailError.message}`,
       })
+=======
+>>>>>>> a58fc96640b05e2f3895544f1f3dc8f5c3586eb6
     }
 
     res.status(200).json({

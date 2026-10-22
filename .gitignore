@@ -24,7 +24,10 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 pnpm-lock.yaml
+<<<<<<< HEAD
 
 /build-check/
 /build-verify/
 /build-verify-clean/
+=======
+>>>>>>> a58fc96640b05e2f3895544f1f3dc8f5c3586eb6

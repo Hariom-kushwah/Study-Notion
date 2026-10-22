@@ -68,7 +68,11 @@ exports.createRating = async (req, res) => {
 // Get the average rating for a course
 exports.getAverageRating = async (req, res) => {
   try {
+<<<<<<< HEAD
     const courseId = req.body?.courseId || req.query?.courseId
+=======
+    const courseId = req.body.courseId
+>>>>>>> a58fc96640b05e2f3895544f1f3dc8f5c3586eb6
 
     // Calculate the average rating using the MongoDB aggregation pipeline
     const result = await RatingAndReview.aggregate([

@@ -67,9 +67,13 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+<<<<<<< HEAD
     "autocannon": "^8.0.0",
     "concurrently": "^8.0.1",
     "nodemon": "^3.1.14",
+=======
+    "concurrently": "^8.0.1",
+>>>>>>> a58fc96640b05e2f3895544f1f3dc8f5c3586eb6
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.2.7"
