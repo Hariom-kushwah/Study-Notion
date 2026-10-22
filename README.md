@@ -252,16 +252,29 @@ MAIL_USER=
 
 MAIL_PASS=
 
-CLOUDINARY_CLOUD_NAME=
+CLOUD_NAME=
 
-CLOUDINARY_API_KEY=
+API_KEY=
 
-CLOUDINARY_API_SECRET=
+API_SECRET=
+
+FOLDER_NAME=
 
 RAZORPAY_KEY=
 
 RAZORPAY_SECRET=
 ```
+
+Do not commit `.env` files or paste secret values into GitHub.
+
+## Deploy the backend to Render
+
+This Express backend runs as a long-lived Node.js server, so deploy it as a Render Web Service rather than a Vercel Function.
+
+1. In Render, create a new Blueprint and select this GitHub repository. Render will use `render.yaml` and set the service root to `server`.
+2. Add the requested environment variables in Render. Use the same names shown above; Render supplies `PORT` automatically. Use a newly generated Gmail App Password for `MAIL_PASS`.
+3. After the service deploys, open its URL. The root page should return a JSON message confirming the server is running.
+4. In the Vercel frontend project's Environment Variables, set `REACT_APP_BASE_URL` to the Render service URL followed by `/api/v1` (for example, `https://your-service.onrender.com/api/v1`), then redeploy the frontend.
 
 ---
 

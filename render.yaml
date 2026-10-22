@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: studynotion-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: MONGODB_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: MAIL_HOST
+        sync: false
+      - key: MAIL_USER
+        sync: false
+      - key: MAIL_PASS
+        sync: false
+      - key: CLOUD_NAME
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: API_SECRET
+        sync: false
+      - key: FOLDER_NAME
+        sync: false
+      - key: RAZORPAY_KEY
+        sync: false
+      - key: RAZORPAY_SECRET
+        sync: false
