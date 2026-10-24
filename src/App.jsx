@@ -23,6 +23,7 @@ import Catalog from "./pages/Catalog"
 import Contact from "./pages/Contact"
 import CourseDetails from "./pages/CourseDetails"
 import Dashboard from "./pages/Dashboard"
+import Payment from "./pages/Payment"
 import Error from "./pages/Error"
 import ForgotPassword from "./pages/ForgotPassword"
 // Pages
@@ -56,6 +57,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="courses/:courseId" element={<CourseDetails />} />
+        <Route path="payment" element={<Payment />} />
         <Route path="catalog/:catalogName" element={<Catalog />} />
         {/* Open Route - for Only Non Logged in User */}
         <Route
